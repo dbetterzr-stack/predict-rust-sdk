@@ -1,0 +1,29 @@
+[package]
+name = "predict-rust-sdk"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+license = "MIT"
+description = "Unofficial Rust client and signed-order builder for Predict.fun"
+repository = "https://github.com/dbetterzr-stack/predict-rust-sdk"
+readme = "README.md"
+keywords = ["predict", "prediction-market", "trading", "rust"]
+categories = ["api-bindings"]
+
+[dependencies]
+ethers-core = "2"
+ethers-signers = "2"
+hex = "0.4"
+rand = "0.8"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+rust_decimal = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+url = "2"
+urlencoding = "2"
+zeroize = "1"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+wiremock = "0.6"
