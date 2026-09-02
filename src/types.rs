@@ -131,6 +131,10 @@ pub struct Category {
     pub slug: String,
     #[serde(default)]
     pub title: String,
+    #[serde(default)]
+    pub created_at: Option<String>,
+    #[serde(default)]
+    pub published_at: Option<String>,
     pub is_neg_risk: bool,
     pub is_yield_bearing: bool,
     #[serde(default)]

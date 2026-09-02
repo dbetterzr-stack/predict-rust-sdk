@@ -429,6 +429,8 @@ mod tests {
                 "id": 7,
                 "slug": "btc-updown-5m-1800000000",
                 "title": "BTC Up or Down",
+                "createdAt": "2027-01-14T08:00:02.000Z",
+                "publishedAt": "2027-01-14T08:00:36.807Z",
                 "isNegRisk": false,
                 "isYieldBearing": false,
                 "startsAt": "2027-01-15T08:00:00Z",
@@ -480,6 +482,14 @@ mod tests {
             .await
             .unwrap();
         assert_eq!(response.data.markets[0].id, 9);
+        assert_eq!(
+            response.data.created_at.as_deref(),
+            Some("2027-01-14T08:00:02.000Z")
+        );
+        assert_eq!(
+            response.data.published_at.as_deref(),
+            Some("2027-01-14T08:00:36.807Z")
+        );
         assert_eq!(response.rate_limit.limit, Some(240));
         assert_eq!(response.rate_limit.remaining, Some(239));
         assert!(!format!("{client:?}").contains("synthetic-api-key"));
